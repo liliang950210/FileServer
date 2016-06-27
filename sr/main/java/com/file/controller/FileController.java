@@ -56,7 +56,7 @@ public class FileController {
 //	                            + "download" + File.separator;
 	                   int now = path2.indexOf("WEB-INF");
 	                   System.out.println(path2.substring(0, now));
-	                   path2 = path2.substring(0,now);
+	                   path2 = "//"+path2.substring(0,now);
 	                    System.out.println(">>>>>>>>>>"+path2);
 	                    
 	                    String path1="file/"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+fileName.substring(fileName.lastIndexOf("."));
@@ -96,7 +96,7 @@ public class FileController {
 //                    + "download" + File.separator;
            int now = path2.indexOf("WEB-INF");
            System.out.println(path2.substring(1, now));
-           path2 = path2.substring(1,now);
+           path2 ="/"+ path2.substring(1,now);
             System.out.println(">>>>>>>>>>"+path2);
             
             String path1="file/"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+fileName.substring(fileName.lastIndexOf("."));

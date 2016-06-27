@@ -8,6 +8,6 @@ package com.file.util;
  */
 public class Constant {
 	
-	public final static String Url="115.159.57.155/";
+	public final static String Url="115.159.57.155:9000/fs/";
 
 }

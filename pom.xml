@@ -244,6 +244,6 @@
 	
   </dependencies>
   <build>
-    <finalName>FileServer</finalName>
+    <finalName>fs</finalName>
   </build>
 </project>
