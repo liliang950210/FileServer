@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -126,6 +127,26 @@ public class FileController {
 			e.printStackTrace();
 			return Message.getMessage(0, "上传失败", "");
 		}
+	}
+	@RequestMapping("/addSession")
+	@ResponseBody
+	public Object addSession(HttpSession session){
+		
+		int rand = (int) (Math.random()*1000);
+		session.setAttribute("test", rand);
+		System.out.println("写入的session"+session.getAttribute("test"));
+		return Message.getMessage(rand);
+	}
+	@RequestMapping("/getSession")
+	@ResponseBody
+	public Object getSession(HttpSession session,Integer rand){
+		
+		System.out.println("获取的session"+session.getAttribute("test"));
+		if(rand==Integer.valueOf(session.getAttribute("test").toString())){
+			return Message.getMessage(1);
+		}
+		else return Message.getMessage(2);
+		
 	}
 
 }
