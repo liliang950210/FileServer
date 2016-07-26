@@ -36,7 +36,17 @@
   <url-pattern>*</url-pattern> 
   </filter-mapping>
   
-  <!-- 跨域的支持 -->
+  <!-- 自定义跨域请求 -->
+  <filter>
+  	<filter-name>accessController</filter-name>
+  	<filter-class>com.file.filter.AccessControllerFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>accessController</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 跨域的支持 
   <filter>
   <filter-name>CorsFilter</filter-name>
   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
@@ -53,7 +63,7 @@
   <filter-name>CorsFilter</filter-name>
   <url-pattern>/*</url-pattern>
 </filter-mapping>
-
+-->
   
 
     

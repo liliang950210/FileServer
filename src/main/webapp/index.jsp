@@ -12,16 +12,22 @@
 <input type="text" id="test"><br>
 验证码<input type="text" id="code" onclick="">
 <input type="button" onclick="testSession()" value="测试">
+<input type="button" onclick="getSession()" value="test"> 
 <script type="text/javascript">
-	var GET_URL = "";
+	var GET_URL = "http://192.168.1.103:8080";
 	 function getSession(){
-		var url = GET_URL + "file/addSession";
+		 
+		var url = GET_URL + "/cookie2";
+		alert(url);
 		$.ajax({
 			url:url,
+			 xhrFields: {
+		            withCredentials: true
+		        },
+		        crossDomain: true,
+
 			success:function(result){
-				if(result.code==1){
-					alert(result.data);
-				}
+				alert("test");
 			},
 			error:function(){
 				
